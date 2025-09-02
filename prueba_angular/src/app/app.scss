@@ -1,0 +1,266 @@
+:host {
+  /* Paleta base */
+  --bright-blue: oklch(51.01% 0.274 263.83);
+  --electric-violet: oklch(53.18% 0.28 296.97);
+  --french-violet: oklch(47.66% 0.246 305.88);
+  --vivid-pink: oklch(69.02% 0.277 332.77);
+  --hot-red: oklch(61.42% 0.238 15.34);
+  --orange-red: oklch(63.32% 0.24 31.68);
+
+  --gray-900: oklch(19.37% 0.006 300.98);
+  --gray-700: oklch(36.98% 0.014 302.71);
+  --gray-400: oklch(70.9% 0.015 304.04);
+
+  --gradient-vertical: linear-gradient(180deg, var(--orange-red) 0%, var(--vivid-pink) 50%, var(--electric-violet) 100%);
+  --gradient-horizontal: linear-gradient(90deg, var(--orange-red) 0%, var(--vivid-pink) 50%, var(--electric-violet) 100%);
+
+  --pill-accent: var(--bright-blue);
+
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Tipografía ---- */
+h1 {
+  font-size: 3.125rem;
+  color: var(--gray-900);
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -0.125rem;
+  margin: 0;
+  font-family: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+p {
+  margin: 0;
+  color: var(--gray-700);
+}
+
+/* ---- Layout ---- */
+main {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: inherit;
+  position: relative;
+}
+
+.body-blank {
+  background: #fff;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.center-title {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #222;
+}
+
+/* ---- Botones genéricos ---- */
+button {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+/* ---- Botón crear ---- */
+.new-post-btn {
+  background: #1976d2;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+.new-post-btn:hover {
+  background: #1565c0;
+}
+
+/* ---- Contenedor tarjetas ---- */
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.card {
+  background: #f8f8f8;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 320px;
+  min-height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+.card h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+.card p {
+  color: #555;
+  font-size: 1rem;
+}
+.card-meta {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 0.7rem;
+  padding-top: 10px;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1.2rem;
+}
+
+/* ---- Botones específicos ---- */
+.view-btn {
+  border: 1.5px solid #1976d2;
+  background: #e3f2fd;
+  color: #1976d2;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  box-shadow: 0 2px 6px rgba(25, 118, 210, 0.15);
+}
+.view-btn:hover {
+  background: #bbdefb;
+  border-color: #0d47a1;
+  color: #0d47a1;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.25);
+}
+.view-btn:active {
+  transform: scale(0.97);
+}
+
+.edit-btn {
+  border: 1.5px solid rgb(217 119 6 / 1);
+  background: rgba(217, 119, 6, 0.12);
+  color: rgb(217 119 6 / 1);
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
+}
+.edit-btn:hover {
+  background: rgba(217, 119, 6, 0.25);
+  color: rgb(180, 80, 0);
+  border-color: rgb(180, 80, 0);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.delete-btn {
+  border: 1.5px solid #dc3545;
+  background: #ffe5e9;
+  color: #dc3545;
+  padding: 0.3rem 1rem;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 8px rgba(220, 53, 69, 0.08);
+}
+.delete-btn:hover {
+  background: #ffd6db;
+  color: #a71d2a;
+  border-color: #a71d2a;
+  transform: translateY(-2px) scale(1.04);
+}
+
+/* ---- Modal ---- */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-confirm {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  padding: 2rem 2.5rem 1.5rem;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: center;
+  animation: modalIn 0.18s;
+}
+
+.modal-confirm h3 {
+  margin-top: 0;
+  color: #dc3545;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+@keyframes modalIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-actions .btn-danger {
+  background: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 3px 8px rgba(220, 53, 69, 0.25);
+}
+.modal-actions .btn-danger:hover {
+  background: #bb2d3b;
+  transform: translateY(-2px);
+}
+.modal-actions .btn-danger:active {
+  transform: scale(0.97);
+}
+
+.modal-actions .btn-light {
+  background: #f4f4f4;
+  color: #444;
+  border: 1.5px solid #ddd;
+  padding: 0.6rem 1.5rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+.modal-actions .btn-light:hover {
+  background: #e9ecef;
+  color: #222;
+  transform: translateY(-2px);
+}
+.modal-actions .btn-light:active {
+  transform: scale(0.97);
+}

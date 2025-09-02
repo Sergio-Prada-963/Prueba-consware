@@ -1,0 +1,45 @@
+<form class="post-form" (ngSubmit)="onSubmit()" autocomplete="off">
+  <div class="form-group">
+    <label for="userId">User ID</label>
+    <input id="userId" type="number"
+           [(ngModel)]="form().userId" name="userId"
+           [readonly]="mode==='view'"
+           required max="9999" min="1" />
+    <div class="error" *ngIf="errors()['userId']">{{ errors()['userId'] }}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="title">Título</label>
+    <input id="title" type="text"
+           [(ngModel)]="form().title" name="title"
+           [readonly]="mode==='view'"
+           required maxlength="50" minlength="3" />
+    <div class="error" *ngIf="errors()['title']">{{ errors()['title'] }}</div>
+  </div>
+
+  <div class="form-group">
+    <label for="body">Cuerpo</label>
+    <textarea id="body"
+              [(ngModel)]="form().body" name="body"
+              [readonly]="mode==='view'"
+              required maxlength="200" minlength="5"></textarea>
+    <div class="error" *ngIf="errors()['body']">{{ errors()['body'] }}</div>
+  </div>
+
+  <div class="form-actions">
+    <!-- Botón dinámico -->
+    <button type="submit"
+            *ngIf="mode==='create' || mode==='update'"
+            [ngClass]="{
+              'btn-create': mode==='create',
+              'btn-update': mode==='update'
+            }">
+      {{ mode==='create' ? 'Crear' : 'Actualizar' }}
+    </button>
+
+    <!-- En vista solo hay cancelar -->
+    <button type="button" (click)="onCancel()" class="btn-cancel">
+      {{ mode==='view' ? 'Cerrar' : 'Cancelar' }}
+    </button>
+  </div>
+</form>
